@@ -1,0 +1,93 @@
+:: Equipo: Sin nombre	Fecha: 03-09-24		Versión: 1
+:: Es un programa que dados los valores introducidos por teclado calcula la medida de cada lado de un triangulo rectangulo usando el teorema de pitagoras
+
+@echo off
+
+:start
+	cls
+	echo Selecciona una opcion
+    
+	echo ----------------------------------------------------------------------
+	echo -                      TEOREMA DE PITAGORAS                          -
+    echo ----------------------------------------------------------------------
+    echo -                                                                    -
+	ECHO -	* *   **        * *** *        * *  *       *       *        -
+	ECHO -	*  * * *        *              *  * *       *       *        -   
+	ECHO -	*   *  *        *              *   *        *       *        -
+	ECHO -	*      *        * ****         *    *       *       *        -
+	ECHO -	*      *        *              *    *       *       *        -
+	ECHO -	*      *        *              *    *        *     *         -
+	ECHO -	*      *        * *****        *    *          ***           -
+    echo -                                                                    -
+    echo ----------------------------------------------------------------------
+	echo                    1.- Cateto opuesto                                    
+	echo                    2.- Cateto adyacente                                  
+	echo                    3.- Hipotenusa                                        
+	echo                    4.- Salir                                        
+    echo ----------------------------------------------------------------------
+	set /p option= "Selecciona la opcion: "
+
+	if "%option%" == "1" goto CatetoOpuesto
+	if "%option%" == "2" goto CatetoAdyacente 
+	if "%option%" == "3" goto Hipotenusa
+	if "%option%" == "4" goto Salir
+
+	rem Mensaje de error
+	echo. no es valido
+	echo.
+	pause
+	echo.
+	goto start
+	EXIT /B
+
+:CatetoOpuesto
+	echo.
+	cls
+	echo --Cateto Opuesto--
+	set /p number1="Cateto adyacente: "
+	set /p number2="Hipotenusa: "
+	for /f "delims=" %%a in ('powershell -command "[math]::Sqrt((%number2%*%number2%)-(%number1%*%number1%))"') do set sqrt=%%a
+	echo El resultado es: %sqrt%
+	pause
+	goto start
+	EXIT /B
+
+:CatetoAdyacente
+	echo.
+	cls
+	echo --Cateto Adyacente--
+	set /p number3="Cateto opuesto: "
+	set /p number4="Hipotenusa: "
+	for /f "delims=" %%a in ('powershell -command "[math]::Sqrt((%number4%*%number4%)-(%number3%*%number3%))"') do set sqrt=%%a
+	echo El resultado es: %sqrt%
+	pause
+	goto start
+	EXIT /B
+
+:Hipotenusa
+	echo.
+	cls
+	echo --Hipotenusa--
+	set /p number5="Cateto opuesto: "
+	set /p number6="Cateto adyacente: "
+	for /f "delims=" %%a in ('powershell -command "[math]::Sqrt((%number5%*%number5%)+( %number6%*%number6%))"') do set sqrt=%%a
+	echo la Hipotenusa vale: %sqrt%
+	pause
+	goto start
+	EXIT /B
+
+:continue 
+	cls
+	goto start
+	EXIT B
+
+:Salir
+	pause
+	Exit
+
+
+
+:: Sugerencia: Basandose en este programa añadir el teorema de Tales
+:: Se tiene que poner inicialmente un menu que escoja que teorema se quiere resolver
+:: Ustedes crearan esa segunda opcion
+:: Documenta todo el cuerpo del codigo 
