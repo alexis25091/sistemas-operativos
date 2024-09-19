@@ -1,3 +1,6 @@
+/* Equipo: Sin nombre    Fecha: 16-09-24   */
+/* Ejemplo de una tiendita donde se venden softwares, y se realizan compras */
+
 #include <stdio.h>
 #include <pthread.h>
 #include <string.h>
