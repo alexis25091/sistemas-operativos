@@ -1,5 +1,5 @@
-/* Equipo: Sin nombre    Fecha: 18/09/24   version 2*/
-/*Se agregaron librerias se modifico la funcion pid a getpid y se quito una libreria que no se usa*/
+/* Equipo: Sin nombre    Fecha: 18/09/24   version 2 */
+/*Se agregaron librerias se modifico la funcion pid a getpid y se quito una libreria que no se usa */
 /*Analisis: crea proceso padre e hijo, se le asignan sus PID de acuerdo a su estatus y los imprime */
 
 //#include <fcntl.h> //Biblioteca para trabajar con operaciones de archivos
