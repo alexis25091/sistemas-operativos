@@ -1,4 +1,4 @@
-/* Equipo: Sin nombre    Fecha: 27-09-24   Version: 1 */
+/* Equipo: Sin nombre    Fecha: 08-10-24   Version: 1 */
 /* Descripcion: Este programa simula un restaurante donde un número limitado de camareros atiende a varios clientes concurrentemente. 
 Utiliza un semáforo para controlar la disponibilidad de los camareros. Cada cliente se representa como un hilo que espera su turno para ser atendido. 
 Cuando un camarero está disponible, atiende al cliente y luego libera el semáforo para que otros clientes puedan ser atendidos. 
